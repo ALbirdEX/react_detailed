@@ -6,6 +6,15 @@ type AccordionPropsType = {
 }
 
 export function Accordion(props: AccordionPropsType) {
+    return (
+        <div>
+            <AccordionTitle title={props.titleValue}/>
+            {!props.collapsed && <AccordionBody/>}
+        </div> //псевдоистина, псевдоложь
+    )
+}
+
+export function Accordion2(props: AccordionPropsType) {
     console.log('Accordion rendering')
     if (!props.collapsed) {
         return (
