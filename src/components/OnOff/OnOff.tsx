@@ -1,7 +1,8 @@
 import React from 'react';
 
 type OnOffPropsType = {
-    on: boolean
+    on: boolean,
+    OnOffHandler: (value: boolean) => void
 }
 
 export const OnOff = (props: OnOffPropsType) => {
@@ -36,8 +37,10 @@ export const OnOff = (props: OnOffPropsType) => {
 
     return (
         <div>
-            <button style={onStyle}>On</button>
-            <button style={offStyle}>Off</button>
+            <button style={onStyle}
+                    onClick={()=>props.OnOffHandler(true)}>On</button>
+            <button style={offStyle}
+                    onClick={()=>props.OnOffHandler(false)}>Off</button>
             <button style={indicatorStyle}>✖️</button>
         </div>
     );

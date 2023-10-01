@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
@@ -9,10 +9,17 @@ function hello() {
     alert('Hello IT-KAMASUSSTRA')
 }
 
-hello()
+//hello()
 
 function App() {
     console.log('App rendering')
+
+    let[click, setClick]=useState(true)
+
+    function OnOffHandler(value: boolean) {
+         return setClick(value)
+    }
+
     return (
         <div>
             <PageTitle title={'This is APP component'}/>
@@ -28,7 +35,8 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
-            <OnOff on={true}/>
+            <OnOff on={click}
+                   OnOffHandler={OnOffHandler}/>
         </div>
     );
 }
