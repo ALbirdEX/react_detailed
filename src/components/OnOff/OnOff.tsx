@@ -45,5 +45,3 @@ export const OnOff = (props: OnOffPropsType) => {
         </div>
     );
 };
-
-export default OnOff;

@@ -2,21 +2,25 @@ import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
-import OnOff from "./components/OnOff/OnOff";
+import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
+import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledAccordion, UncontrolledAccordion2} from "./components/Accordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
+import {UncontrolledRating2} from "./components/Rating/UncontrolledRating2";
 
-function hello() {
+/*function hello() {
     debugger
-    alert('Hello IT-KAMASUSSTRA')
-}
+    alert('Hello IT-KAMASUTRA')
+}*/
 
 //hello()
 
 function App() {
     console.log('App rendering')
 
-    let[click, setClick]=useState(true)
+    let[click, setClick]=useState<boolean>(true)
 
-    function OnOffHandler(value: boolean) {
+    const OnOffHandler = (value: boolean) => {
          return setClick(value)
     }
 
@@ -28,6 +32,9 @@ function App() {
             <Rating value={3}/>
             <Accordion titleValue={'Menu'} collapsed={true}/>
             <Accordion titleValue={'Users'} collapsed={false}/>
+            <UncontrolledAccordion titleValue={'Menu'}/>
+            <UncontrolledAccordion titleValue={'Users'}/>
+            <UncontrolledAccordion2 titleValue={'UncontrolledAccordion2'}/>
             Article 2
             <Rating value={0}/>
             <Rating value={1}/>
@@ -35,8 +42,12 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
+            UncontrolledStar
+            <UncontrolledRating/>
+            <UncontrolledRating2/>
             <OnOff on={click}
                    OnOffHandler={OnOffHandler}/>
+            <UncontrolledOnOff/>
         </div>
     );
 }
