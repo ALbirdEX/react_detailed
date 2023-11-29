@@ -14,11 +14,11 @@ export function UncontrolledRating2() {
     }
     return (
         <div>
-            <Star selected={value > 0} number={1} onClickHandler={onClickHandler}/>
-            <Star selected={value > 1} number={2} onClickHandler={onClickHandler}/>
-            <Star selected={value > 2} number={3} onClickHandler={onClickHandler}/>
-            <Star selected={value > 3} number={4} onClickHandler={onClickHandler}/>
-            <Star selected={value > 4} number={5} onClickHandler={onClickHandler}/>
+            <Star selected={value > 0} value={1} onClickHandler={onClickHandler}/>
+            <Star selected={value > 1} value={2} onClickHandler={onClickHandler}/>
+            <Star selected={value > 2} value={3} onClickHandler={onClickHandler}/>
+            <Star selected={value > 3} value={4} onClickHandler={onClickHandler}/>
+            <Star selected={value > 4} value={5} onClickHandler={onClickHandler}/>
         </div>
     )
 }
@@ -26,12 +26,12 @@ export function UncontrolledRating2() {
 
 type StarPropsType = {
     selected: boolean
-    number: number
-    onClickHandler: (val: number) => void
+    value: 1 | 2 | 3 | 4 | 5
+    onClickHandler: (val: 1 | 2 | 3 | 4 | 5) => void
 }
 
 function Star(props: StarPropsType) {
-    return <span onClick={() => {props.onClickHandler(props.number)}}>
+    return <span onClick={() => {props.onClickHandler(props.value)}}>
             {props.selected ? <b>star </b> : 'star '}
         </span>
 }
