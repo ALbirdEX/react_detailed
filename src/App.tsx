@@ -19,31 +19,33 @@ import {UncontrolledRating3} from "./components/Rating/UncontrolledRating3";
 function App() {
     console.log('App rendering')
 
-    let[click, setClick]=useState<boolean>(true)
-    const OnOffHandler = (value: boolean) => setClick(value)
+    let [switchOn, setSwitchOn] = useState<boolean>(true)
+    //const OnOffHandler = (value: boolean) => setClick(value)
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
-
+    const onChange = () => {setAccordionCollapsed(!accordionCollapsed)}
 
     return (
         <div className={"App"}>
             <PageTitle title={'This is APP component'}/>
             <PageTitle title={'My friends'}/>
             Article 1
-            <Rating value={3} onClick={() => {}}/>
+            <Rating value={3} onClick={() => {
+            }}/>
             <Accordion2 titleValue={'Menu'}
-                       setAccordionCollapsed={setAccordionCollapsed}
-                       collapsed={accordionCollapsed}/>
-{/*
+                        //setAccordionCollapsed={setAccordionCollapsed}
+                        collapsed={accordionCollapsed}
+                        onChange={onChange}/>
+            {/*
             <Accordion titleValue={'Users'} collapsed={false}/>
 */}
             <UncontrolledAccordion titleValue={'Menu'}/>
             <UncontrolledAccordion titleValue={'Users'}/>
             <UncontrolledAccordion2 titleValue={'UncontrolledAccordion2'}/>
             Article 2
-            <Rating value={ratingValue} onClick={setRatingValue} />
-           {/* <Rating value={0}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            {/* <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
@@ -53,9 +55,9 @@ function App() {
             <UncontrolledRating/>
             <UncontrolledRating2/>
             <UncontrolledRating3/>
-            <OnOff on={click}
-                   OnOffHandler={OnOffHandler}/>
-            <UncontrolledOnOff/>
+            <OnOff on={switchOn}
+                   OnOffHandler={setSwitchOn}/>
+            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
         </div>
     );
 }

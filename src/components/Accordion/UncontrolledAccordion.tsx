@@ -29,29 +29,11 @@ export function UncontrolledAccordion2(props: AccordionPropsType) {
     }
 
     console.log('Accordion rendering')
-    /*if (!collapsed) {
-        return (
-            <div>
+
+    return <div>
                 <AccordionTitle title={props.titleValue}
                                 onClickHandler={onClickHandler}/>
-                <AccordionBody/>
-            </div>
-        );
-    }
-    return (
-        <div>
-            <AccordionTitle title={props.titleValue}
-                            onClickHandler={onClickHandler}/>
-        </div>
-    );*/
-    return !collapsed ?
-            <div>
-                <AccordionTitle title={props.titleValue}
-                                onClickHandler={onClickHandler}/>
-                <AccordionBody/>
-            </div> : <div>
-                <AccordionTitle title={props.titleValue}
-                                onClickHandler={onClickHandler}/>
+                {!collapsed && <AccordionBody/>}
             </div>
 }
 
