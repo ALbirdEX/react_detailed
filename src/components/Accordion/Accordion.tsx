@@ -39,7 +39,9 @@ type AccordionTitlePropsType = {
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log('AccordionTitle rendering')
-    return <h3 onClick={props.onChange}>{props.title}</h3>
+    //return <h3 onClick={props.onChange}>{props.title}</h3>
+    return <h3 onClick={(event) => props.onChange()}>{props.title}</h3>
+//с event показывл димыч в storybook 10.1 так более правильно
 }
 
 function AccordionBody() {

@@ -24,29 +24,28 @@ export const FirstAccordion: Story = {
 */
 
 export default {
+    title: 'Accordion',
     component: Accordion2
 }
 
-const onChangeHandler = action('oChange')
+const onChangeHandler = action('collapsed or no')
 
 
 export const CollapsedAccordion = () => {
     return <Accordion2 titleValue={'Collapsed Accordion'}
                        collapsed={true}
-                       onChange={() => {}}/>
-
+                       onChange={onChangeHandler}/>
 }
 
 export const OpenedAccordion = () => {
     return <Accordion2 titleValue={'Opened Accordion'}
                        collapsed={false}
-                       onChange={() => {}}/>
+                       onChange={onChangeHandler}/>
 }
 
 export const AccordionDemo = () => {
     const [collapsed, setCollapsed] = useState(true)
     return <Accordion2 titleValue={'Accordion'}
                        collapsed={collapsed}
-                       onChange={() => {
-                           setCollapsed(!collapsed)}}/>
+                       onChange={() => setCollapsed(!collapsed)}/>
 }
