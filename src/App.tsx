@@ -33,7 +33,7 @@ function App() {
             Article 1
             <Rating value={3} onClick={() => {
             }}/>
-            <Accordion2 titleValue={'Menu'}
+            <Accordion2 titleValue={'Menu controlled'}
                         //setAccordionCollapsed={setAccordionCollapsed}
                         collapsed={accordionCollapsed}
                         onChange={onChange}/>

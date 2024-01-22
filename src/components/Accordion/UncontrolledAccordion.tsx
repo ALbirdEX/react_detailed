@@ -31,10 +31,10 @@ export function UncontrolledAccordion2(props: AccordionPropsType) {
     console.log('Accordion rendering')
 
     return <div>
-                <AccordionTitle title={props.titleValue}
-                                onClickHandler={onClickHandler}/>
-                {!collapsed && <AccordionBody/>}
-            </div>
+        <AccordionTitle title={props.titleValue}
+                        onClickHandler={onClickHandler}/>
+        {!collapsed && <AccordionBody/>}
+    </div>
 }
 
 type AccordionTitlePropsType = {

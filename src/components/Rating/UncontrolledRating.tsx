@@ -2,25 +2,31 @@ import React, {useState} from "react";
 
 
 //атрибуты, если строковые то {}, а если строковые то можно просто ''
+type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
 
+type UncontrolledRatingPropsType = {
+    defaultValue?: RatingValueType
+    onChange: (value: RatingValueType) => void
+}
 
-export function UncontrolledRating() {
+export function UncontrolledRating(props: UncontrolledRatingPropsType) {
     console.log('Rating rendering')
 
-    let [value, setValue] = useState(0)
+    let [value, setValue] = useState<RatingValueType>(props.defaultValue ? props.defaultValue : 0)
 
-    const onClickHandler = (value: number) => {
+    const onClickHandler = (value: RatingValueType) => {
         setValue(value)
+        props.onChange(value);
     }
 
     return (
         <div>
-            <span onClick={() => onClickHandler(0)}>*RESET, touch me!* </span>
-            <Star selected={value > 0}/><button onClick={() => onClickHandler(1)}>1</button>
-            <Star selected={value > 1}/><button onClick={() => onClickHandler(2)}>2</button>
-            <Star selected={value > 2}/><button onClick={() => onClickHandler(3)}>3</button>
-            <Star selected={value > 3}/><button onClick={() => onClickHandler(4)}>4</button>
-            <Star selected={value > 4}/><button onClick={() => onClickHandler(5)}>5</button>
+            <span onClick={() => onClickHandler(0)}>*RESET, touch me!* </span><Star selected={value > 0}/>
+            <button onClick={() => onClickHandler(1)}>1</button><Star selected={value > 1}/>
+            <button onClick={() => onClickHandler(2)}>2</button><Star selected={value > 2}/>
+            <button onClick={() => onClickHandler(3)}>3</button><Star selected={value > 3}/>
+            <button onClick={() => onClickHandler(4)}>4</button><Star selected={value > 4}/>
+            <button onClick={() => onClickHandler(5)}>5</button>
         </div>
     )
 }

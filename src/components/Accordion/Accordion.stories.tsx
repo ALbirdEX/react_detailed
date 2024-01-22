@@ -3,26 +3,6 @@ import {action} from '@storybook/addon-actions'
 import {Accordion2} from "./Accordion";
 import React, {useState} from "react";
 
-/*
-const meta: Meta<typeof Accordion2> = {
-    component: Accordion2,
-};
-
-export default meta;
-
-type Story = StoryObj<typeof Accordion2>;
-*/
-
-/*
-export const FirstAccordion: Story = {
-    args: {
-        titleValue: "HI",
-        collapsed: true,
-        onChange: () => {},
-        }
-}
-*/
-
 export default {
     title: 'Accordion',
     component: Accordion2
@@ -30,11 +10,10 @@ export default {
 
 const onChangeHandler = action('collapsed or no')
 
-
 export const CollapsedAccordion = () => {
     return <Accordion2 titleValue={'Collapsed Accordion'}
                        collapsed={true}
-                       onChange={onChangeHandler}/>
+                       onChange={() => {}}/>
 }
 
 export const OpenedAccordion = () => {
