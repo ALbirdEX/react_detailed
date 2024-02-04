@@ -21,12 +21,17 @@ export function UncontrolledRating(props: UncontrolledRatingPropsType) {
 
     return (
         <div>
-            <span onClick={() => onClickHandler(0)}>*RESET, touch me!* </span><Star selected={value > 0}/>
             <button onClick={() => onClickHandler(1)}>1</button><Star selected={value > 1}/>
             <button onClick={() => onClickHandler(2)}>2</button><Star selected={value > 2}/>
             <button onClick={() => onClickHandler(3)}>3</button><Star selected={value > 3}/>
             <button onClick={() => onClickHandler(4)}>4</button><Star selected={value > 4}/>
             <button onClick={() => onClickHandler(5)}>5</button>
+            <span onClick={() => onClickHandler(0)}>{
+                value
+                ? <span><b> *RESET, touch me!*</b></span>
+                : " *RESET, touch me!*"}</span>
+            <Star selected={value > 0}/>
+
         </div>
     )
 }
