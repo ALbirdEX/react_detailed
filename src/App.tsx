@@ -8,7 +8,6 @@ import {UncontrolledAccordion, UncontrolledAccordion2} from "./components/Accord
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 import {UncontrolledRating2} from "./components/Rating/UncontrolledRating2";
 import {UncontrolledRating3} from "./components/Rating/UncontrolledRating3";
-import { UncontrolledRating4 } from './components/Rating/UncontrolledRating4';
 
 /*function hello() {
     debugger
@@ -54,11 +53,8 @@ function App() {
             <Rating value={5}/>*/}
             UncontrolledStar
             <UncontrolledRating onChange={setRatingValue}/>
-            <UncontrolledRating onChange={setRatingValue}/>
-            <UncontrolledRating onChange={setRatingValue}/>s
             <UncontrolledRating2/>
             <UncontrolledRating3/>
-            <UncontrolledRating4/>
             <OnOff on={switchOn}
                    OnOffHandler={setSwitchOn}/>
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
