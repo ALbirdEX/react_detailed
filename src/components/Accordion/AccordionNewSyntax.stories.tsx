@@ -23,5 +23,13 @@ const onChangeHandler = action('collapsed or no')  //для старого ти�
 export const CollapsedAccordion = () => {         //ближе к REACT
     return <Accordion2 titleValue={'Collapsed Accordion'}
                        collapsed={true}
-                       onChange={onChangeHandler}/>
+                       onChange={onChangeHandler}
+                       items={[
+                           {title: "Viktor", value: 1},
+                           {title: "Dima", value: true},
+                           {title: "Ivan", value: "10"},
+                           {title: "Alex", value: false},
+                           {title: "I", value: ""}
+                       ]}
+                       onClick={(value) => {alert(value)}}/>
 }
