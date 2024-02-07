@@ -8,6 +8,7 @@ import {UncontrolledAccordion, UncontrolledAccordion2} from "./components/Accord
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 import {UncontrolledRating2} from "./components/Rating/UncontrolledRating2";
 import {UncontrolledRating3} from "./components/Rating/UncontrolledRating3";
+import {MySelect} from "./components/Select/MySelect";
 
 /*function hello() {
     debugger
@@ -30,6 +31,11 @@ function App() {
 
     const onClick = (value: any) => alert(value)
 
+    //MySelect
+    const [title, setTitle] = useState<string>("Click")
+    const onChangeTitle =(value: string) => {
+        setTitle(value)
+    }
     return (
         <div className={"App"}>
             <PageTitle title={'This is APP component'}/>
@@ -70,6 +76,16 @@ function App() {
             <OnOff on={switchOn}
                    OnOffHandler={setSwitchOn}/>
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+            <hr/>
+            <MySelect value={title}
+                      onChange={onChangeTitle}
+                      item={[
+                          {title: "Viktor", value: 1},
+                          {title: "Dima", value: true},
+                          {title: "Ivan", value: "10"},
+                          {title: "Alex", value: false},
+                          {title: "I", value: ""}
+                      ]}/>
         </div>
     );
 }
