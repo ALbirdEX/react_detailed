@@ -9,6 +9,7 @@ import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 import {UncontrolledRating2} from "./components/Rating/UncontrolledRating2";
 import {UncontrolledRating3} from "./components/Rating/UncontrolledRating3";
 import {MySelect} from "./components/Select/MySelect";
+import {Select} from "./components/Select/Select";
 
 /*function hello() {
     debugger
@@ -32,7 +33,7 @@ function App() {
     const onClick = (value: any) => alert(value)
 
     //MySelect
-    const [title, setTitle] = useState<string>("Click")
+    const [title, setTitle] = useState<string>('Click')
     const onChangeTitle =(value: string) => {
         setTitle(value)
     }
@@ -80,6 +81,15 @@ function App() {
             <MySelect value={title}
                       onChange={onChangeTitle}
                       item={[
+                          {title: "Viktor", value: 1},
+                          {title: "Dima", value: true},
+                          {title: "Ivan", value: "10"},
+                          {title: "Alex", value: false},
+                          {title: "I", value: ""}
+                      ]}/>
+            <Select value={title}
+                      onChange={onChangeTitle}
+                      items={[
                           {title: "Viktor", value: 1},
                           {title: "Dima", value: true},
                           {title: "Ivan", value: "10"},

@@ -31,13 +31,13 @@ export function MySelect(props: MySelectPropsType) {
     }
 
     return (
-        <div>
+        <>
             <button onClick={onClickHandler} className={s.button}><h3>{props.value}</h3></button>
             <span ref={animationRef}>
-                {!collapsed && props.item.map(i => <div className={s.list}
-                    onClick={() => {onClickTitle(i.title)}}>{i.title}</div>)}
+                {!collapsed && props.item.map(i => <button className={s.list}
+                    onClick={() => {onClickTitle(i.title)}}>{i.title}</button>)}
             </span>
-        </div>
+        </>
     );
 }
 

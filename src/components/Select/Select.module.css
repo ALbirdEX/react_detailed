@@ -1,0 +1,23 @@
+.select .main {
+    border: 1px solid black;
+    display: inline-block;
+    min-width: 60px;
+    min-height: 20px;
+}
+
+.items {
+    /*display: none;             // CSS скрывет DIV*/
+    position: absolute;
+    padding: 5px;
+    border: 1px black solid;
+}
+
+/*
+.select.active .items {
+    display: block;              // CSS скрывет DIV
+}*/
+
+.item.selected {
+    background-color: cornflowerblue;
+    color: #e7fdd8;
+}

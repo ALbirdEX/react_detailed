@@ -11,10 +11,14 @@
 .list {
     margin: 0 auto;
     display: block;
-    text-align: center;
+
     border: 2px solid black;
     border-radius: 15px;
     width: 150px;
     background-color: burlywood;
+}
+
+.span {
+    position: absolute;
 }
 
