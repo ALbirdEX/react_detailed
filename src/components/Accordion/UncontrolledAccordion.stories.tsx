@@ -1,7 +1,7 @@
 import {UncontrolledAccordion2} from "./UncontrolledAccordion";
 
 export default {
-    title: 'UncontrolledAccordion',
+    title: 'UncontrolledAccordionReducer',
     component: UncontrolledAccordion2
 }
 
