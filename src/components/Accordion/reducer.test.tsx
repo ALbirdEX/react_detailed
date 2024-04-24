@@ -1,4 +1,4 @@
-import {reducer, StateType, TOGGLE_COLLAPSED} from "./reducer";
+import {reducer, StateType, TOGGLE_CONSTANT} from "./reducer";
 
 test('collapsed should be true', () => {
     //data
@@ -6,7 +6,7 @@ test('collapsed should be true', () => {
         collapsed: false
     }
     //action
-    const newState = reducer(state, {type: TOGGLE_COLLAPSED})
+    const newState = reducer(state, {type: TOGGLE_CONSTANT})
 
     //expection
     expect(newState.collapsed).toBe(true)
@@ -17,7 +17,7 @@ test('collapsed should be false', () => {
         collapsed: true
     }
     //action
-    const newState = reducer(state, {type: TOGGLE_COLLAPSED})
+    const newState = reducer(state, {type: TOGGLE_CONSTANT})
 
     //expection
     expect(newState.collapsed).toBe(false)
