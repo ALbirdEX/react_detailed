@@ -4,7 +4,7 @@ import {Accordion2} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
 import {OnOff} from "./components/OnOff/OnOff";
-import {UncontrolledAccordion, UncontrolledAccordion2} from "./components/Accordion/UncontrolledAccordion";
+import {UncontrolledAccordion2} from "./components/Accordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 import {UncontrolledRating2} from "./components/Rating/UncontrolledRating2";
 import {UncontrolledRating3} from "./components/Rating/UncontrolledRating3";
@@ -59,8 +59,8 @@ function App() {
             {/*
             <Accordion titleValue={'Users'} collapsed={false}/>
 */}
-            <UncontrolledAccordion titleValue={'Menu'}/>
-            <UncontrolledAccordion titleValue={'Users'}/>
+          {/*  <UncontrolledAccordion titleValue={'Menu'}/>
+            <UncontrolledAccordion titleValue={'Users'}/>*/}
             <UncontrolledAccordion2 titleValue={'UncontrolledAccordion2'}/>
             Article 2
             <Rating value={ratingValue} onClick={setRatingValue}/>

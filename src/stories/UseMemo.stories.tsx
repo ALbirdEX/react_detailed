@@ -104,6 +104,7 @@ export const LikeUseCallback = () => {
         {counter}
         <Book books={newArray} addBook={memoizedAddBook}/>
         <Book books={newArray} addBook={memoizedAddBook2}/>
+
     </>
 }
 
