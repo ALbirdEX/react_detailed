@@ -10,6 +10,7 @@ import {UncontrolledRating2} from "./components/Rating/UncontrolledRating2";
 import {UncontrolledRating3} from "./components/Rating/UncontrolledRating3";
 import {MySelect} from "./components/Select/MySelect";
 import {Select} from "./components/Select/Select";
+import {Clock} from "./components/Clock/Clock";
 
 /*function hello() {
     debugger
@@ -96,6 +97,7 @@ function App() {
                           {title: "Alex", value: false},
                           {title: "I", value: ""}
                       ]}/>
+            <Clock/>
         </div>
     );
 }

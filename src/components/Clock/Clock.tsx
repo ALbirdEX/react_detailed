@@ -1,16 +1,24 @@
 import React, {useEffect, useState} from "react";
 
-export const Clock = () => {
+function get2number(num: number) {
+    return num < 10 ? "0" + num : num
+}
+
+export const Clock: React.FC = () => {
     const [data, setData] = useState(new Date())
 
     useEffect(() => {
-        setInterval(() => {
-            console.log("TICK")
+        const intervalID = setInterval(() => {
             setData(new Date())
         }, 1000)
+        return () => {clearInterval(intervalID)}
     }, []);
 
     return <>
-        {data.getHours()} : {data.getMinutes()} : {data.getSeconds()}
+        {get2number(data.getHours())}
+        :
+        {get2number(data.getMinutes())}
+        :
+        {get2number(data.getSeconds())}
     </>
 }
