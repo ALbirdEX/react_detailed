@@ -97,7 +97,7 @@ function App() {
                           {title: "Alex", value: false},
                           {title: "I", value: ""}
                       ]}/>
-            <Clock/>
+            <Clock mode={"analog"}/>
         </div>
     );
 }

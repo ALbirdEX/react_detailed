@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../Cursor.css';
 
 //атрибуты, если строковые то {}, а если строковые то можно просто ''
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
@@ -13,7 +13,7 @@ export function Rating(props: RatingPropsType) {
     console.log('Rating rendering')
 
     return (
-        <div>
+        <div className={"Cursor"}>
             <Star selected={props.value > 0} onClick={props.onClick} value={1}/>
             <Star selected={props.value > 1} onClick={props.onClick} value={2}/>
             <Star selected={props.value > 2} onClick={props.onClick} value={3}/>
